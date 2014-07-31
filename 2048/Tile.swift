@@ -159,9 +159,9 @@ public class Tile: CCNode {
         )
     }
     
-    override public func runAction(action: CCAction!) -> CCAction! {
-        stopAllActions()
-        return super.runAction(action)
-    }
+//    override public func runAction(action: CCAction!) -> CCAction! {
+//        stopAllActions()
+//        return super.runAction(action)
+//    }
 
 }

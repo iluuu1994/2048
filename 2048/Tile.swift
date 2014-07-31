@@ -135,7 +135,7 @@ public class Tile: CCNode {
     
     
     public func canMergeWith(tile: Tile) -> Bool {
-        return value == tile.value && !locked
+        return value == tile.value && !locked && !tile.locked
     }
     
     

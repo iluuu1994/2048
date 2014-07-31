@@ -66,21 +66,9 @@ class GameBoard: CCNode {
             }
         }
         
-//        for times in 0..<2 {
-//            spawnRandomTile()
-//        }
-        
-        addTile(Tile(size: tileSize, value: 2), x: 0, y: 0)
-        addTile(Tile(size: tileSize, value: 4), x: 1, y: 0)
-        addTile(Tile(size: tileSize, value: 8), x: 2, y: 0)
-        addTile(Tile(size: tileSize, value: 16), x: 3, y: 0)
-        addTile(Tile(size: tileSize, value: 32), x: 0, y: 1)
-        addTile(Tile(size: tileSize, value: 64), x: 1, y: 1)
-        addTile(Tile(size: tileSize, value: 128), x: 2, y: 1)
-        addTile(Tile(size: tileSize, value: 256), x: 3, y: 1)
-        addTile(Tile(size: tileSize, value: 512), x: 0, y: 2)
-        addTile(Tile(size: tileSize, value: 1024), x: 1, y: 2)
-        addTile(Tile(size: tileSize, value: 2048), x: 2, y: 2)
+        for times in 0..<2 {
+            spawnRandomTile()
+        }
     }
     
     

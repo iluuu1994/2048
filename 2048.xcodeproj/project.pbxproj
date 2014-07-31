@@ -207,6 +207,7 @@
 		917FE63019818F7000FE8E8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62F19818F7000FE8E8F /* AppDelegate.m */; };
 		917FE63319818F7000FE8E8F /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE63219818F7000FE8E8F /* HelloWorldScene.m */; };
 		917FE63619818F7000FE8E8F /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE63519818F7000FE8E8F /* IntroScene.m */; };
+		91B4A6C9198A5D00000CF0AD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4A6C8198A5D00000CF0AD /* Helpers.swift */; };
 		91D08D25198959D2009D5195 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D24198959D2009D5195 /* GameScene.swift */; };
 		91D08D2819895AF3009D5195 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D2719895AF3009D5195 /* GameBoard.swift */; };
 /* End PBXBuildFile section */
@@ -625,6 +626,7 @@
 		917FE63219818F7000FE8E8F /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		917FE63419818F7000FE8E8F /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		917FE63519818F7000FE8E8F /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
+		91B4A6C8198A5D00000CF0AD /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2048-Bridging-Header.h"; sourceTree = "<group>"; };
 		91D08D24198959D2009D5195 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		91D08D2719895AF3009D5195 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
@@ -1460,6 +1462,7 @@
 				911A1BA519896C3200D1899B /* TilePlaceholder.swift */,
 				911A1BA719897AE500D1899B /* Matrix.swift */,
 				91327D6B198987FD0006C7B9 /* SwipeDirection.swift */,
+				91B4A6C8198A5D00000CF0AD /* Helpers.swift */,
 			);
 			name = GameBoard;
 			sourceTree = "<group>";
@@ -1690,6 +1693,7 @@
 				917FE41B19818F6E00FE8E8F /* CCEffectTexture.m in Sources */,
 				917FE50A19818F6F00FE8E8F /* CCColor.m in Sources */,
 				917FE42419818F6E00FE8E8F /* CCShader.m in Sources */,
+				91B4A6C9198A5D00000CF0AD /* Helpers.swift in Sources */,
 				917FE44619818F6E00FE8E8F /* CCAnimation.m in Sources */,
 				917FE59219818F6F00FE8E8F /* CCControlTextureFactory.m in Sources */,
 				917FE53619818F6F00FE8E8F /* OALAudioActions.m in Sources */,

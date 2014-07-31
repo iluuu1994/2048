@@ -23,6 +23,7 @@ class TilePlaceholder: CCNode {
         super.init()
         
         contentSize = CGSize(width: CGFloat(size), height: CGFloat(size))
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
         addChild(_backgroundNode)
     }
     

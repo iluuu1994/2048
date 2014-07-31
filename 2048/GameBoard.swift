@@ -66,7 +66,21 @@ class GameBoard: CCNode {
             }
         }
         
-        spawnRandomTile()
+//        for times in 0..<2 {
+//            spawnRandomTile()
+//        }
+        
+        addTile(Tile(size: tileSize, value: 2), x: 0, y: 0)
+        addTile(Tile(size: tileSize, value: 4), x: 1, y: 0)
+        addTile(Tile(size: tileSize, value: 8), x: 2, y: 0)
+        addTile(Tile(size: tileSize, value: 16), x: 3, y: 0)
+        addTile(Tile(size: tileSize, value: 32), x: 0, y: 1)
+        addTile(Tile(size: tileSize, value: 64), x: 1, y: 1)
+        addTile(Tile(size: tileSize, value: 128), x: 2, y: 1)
+        addTile(Tile(size: tileSize, value: 256), x: 3, y: 1)
+        addTile(Tile(size: tileSize, value: 512), x: 0, y: 2)
+        addTile(Tile(size: tileSize, value: 1024), x: 1, y: 2)
+        addTile(Tile(size: tileSize, value: 2048), x: 2, y: 2)
     }
     
     
@@ -74,9 +88,26 @@ class GameBoard: CCNode {
     // MARK: Game Logic
     
     func spawnRandomTile() {
-        addTile(Tile(size: tileSize, value: 2), x: 0, y: 0)
-        addTile(Tile(size: tileSize, value: 2), x: 1, y: 0)
-        addTile(Tile(size: tileSize, value: 4), x: 0, y: 1)
+        let possiblePositions = emptyTiles()
+        let position = possiblePositions[randomWhole(0, possiblePositions.count - 1)]
+        let value = randomWhole(0, 6) <= 5 ? 2 : 4
+        
+        let tile = Tile(size: tileSize, value: value)
+        addTile(tile, x: position.x, y: position.y)
+        tile.runAction(tile.spawnAnimation())
+    }
+    
+    func emptyTiles() -> [(x: Int, y: Int)] {
+        var emptyTiles = Array<(x: Int, y: Int)>()
+        for x in 0..<_tiles.width {
+            for y in 0..<_tiles.height {
+                if _tiles[x, y] == nil {
+                    emptyTiles += (x, y)
+                }
+            }
+        }
+        
+        return emptyTiles
     }
     
     func addTile(tile: Tile, x: Int, y: Int) {
@@ -89,6 +120,12 @@ class GameBoard: CCNode {
         addChild(tile)
     }
     
+    func removeTile(at: (x: Int, y: Int)) {
+        if let tile = _tiles[at.x, at.y] {
+            _tiles[at.x, at.y] = nil
+        }
+    }
+    
     func moveTile(at: (x: Int, y: Int), to:(x: Int, y: Int)) {
         assert(!(at.x == to.x && at.y == to.y), "The tile is already at this location.")
         assert(_tiles[to.x, to.y] == nil, "The new tile position is not free.")
@@ -96,49 +133,11 @@ class GameBoard: CCNode {
         if let tile = _tiles[at.x, at.y] {
             _tiles[at.x, at.y] = nil
             _tiles[to.x, to.y] = tile
-            tile.runAction(CCActionMoveTo(duration: kTileSwipeAnimationDuration, position: tilePosition(to.x, to.y)))
+            tile.runAction(tile.moveToAnimation(tilePosition(to.x, to.y)))
         }
     }
     
     func performSwipeInDirection(direction: SwipeDirection) {
-        func canMoveTile(at: (x: Int, y: Int), to:(x: Int, y: Int)) -> Bool {
-            let tile = _tiles[at.x, at.y]!
-            
-            if let fixedTile = _tiles[to.x, to.y] {
-                return false
-                
-                if tile.value == fixedTile.value {
-                    return true
-                } else {
-                    return false
-                }
-            }
-            
-            return true
-        }
-        
-        func moveTileToPositionIfPossible(x: Int, y: Int, newX: Int, newY: Int) -> Bool {
-            let tile = _tiles[x, y]!
-            let fixedTile = _tiles[newX, newY]
-            
-            if let nnFixedTile = fixedTile {
-                // Move the tile and merge it with the other tile
-                if tile.value == nnFixedTile.value {
-                    moveTile((x, y), to: (newX, newY))
-                    
-                    return true
-                }
-            } else {
-                // Just move the tile
-                moveTile((x, y), to: (newX, newY))
-                
-                return true
-            }
-            
-            return false
-        }
-       
-        
         var firstI: ForInLoop<Int>!
         var secondI: ForInLoop<Int>!
         var ppI: ForInLoop<Int>!
@@ -167,74 +166,81 @@ class GameBoard: CCNode {
                 gV = {($1,$0)}
         }
         
+        var validSwipe = false
         
         for var firstV = firstI.initialValue; firstI.condition(firstV); firstV += firstI.incrementalValue {
             for var secondV = secondI.initialValue; secondI.condition(secondV); secondV += secondI.incrementalValue {
                 let tilePos = gV(firstV, secondV)
                 
                 if let tile = _tiles[tilePos.x, tilePos.y] {
-                    println("a tile!")
-                    
                     var newPos: (x: Int, y: Int)?
-                    
-                    println("tiles position: \(tilePos)")
                     
                     possiblePositions: for var pp = firstV + ppI.incrementalValue; ppI.condition(pp); pp += ppI.incrementalValue {
                         let possiblePos = gV(pp, secondV)
                         
-                        if canMoveTile(tilePos, possiblePos) {
-                            newPos = possiblePos
-                        } else {
+                        if let fixedTile = _tiles[possiblePos.x, possiblePos.y] {
+                            if tile.canMergeWith(fixedTile) {
+                                newPos = possiblePos
+                            }
                             break possiblePositions
+                        } else {
+                            newPos = possiblePos
                         }
                     }
-
+                    
                     if let nnNewPos = newPos {
-                        moveTile(tilePos, to: nnNewPos)
+                        validSwipe = true
+                        
+                        if let fixedTile = _tiles[nnNewPos.x, nnNewPos.y] {
+                            // Move the tile and merge it with the other tile
+                            removeTile(nnNewPos)
+                            removeTile(tilePos)
+                            
+                            let mergedTile = Tile(size: tileSize, value: tile.value + fixedTile.value)
+                            mergedTile.locked = true
+                            mergedTile.visible = false
+                            
+                            addTile(
+                                mergedTile,
+                                x: nnNewPos.x,
+                                y: nnNewPos.y
+                            )
+                            
+                            tile.runAction(CCActionSequence(
+                                one: tile.moveToAnimation(tilePosition(nnNewPos.x, nnNewPos.y)),
+                                two: CCActionCallBlock(block: {
+                                    tile.removeFromParent()
+                                    fixedTile.removeFromParent()
+                                    mergedTile.visible = true
+                                    mergedTile.runAction(mergedTile.mergeAnimation())
+                                })
+                            ))
+                        } else {
+                            // Just move the tile
+                            moveTile(tilePos, to: nnNewPos)
+                        }
                     }
                 }
             }
         }
         
-//        switch direction {
-//            case .Left:
-//                for x in 1..<_tiles.width {
-//                    for y in 0..<_tiles.height {
-//                        if let tile = _tiles[x, y] {
-//                            var moveBy = 0
-//                            tryEach: for var newX = x-1; newX >= 0; newX-- {
-//                                if canMoveTile(x, y, newX, y) {
-//                                    moveBy++
-//                                } else {
-//                                    break tryEach
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            case .Right:
-//                for var x = _tiles.width-2; x >= 0; x-- {
-//                    for y in 0..<_tiles.height {
-//                        if let tile = _tiles[x, y] {
-//                            var moveBy = 0
-//                            tryEach: for var newX = x+1; newX < _tiles.width; newX++ {
-//                                if canMoveTile(x, y, newX, y) {
-//                                    moveBy++
-//                                } else {
-//                                    break tryEach
-//                                }
-//                            }
-//                            
-//                            if moveBy > 0 {
-//                                moveTileToPositionIfPossible(x, y, x + moveBy, y)
-//                            }
-//                        }
-//                    }
-//                }
-//            default:
-//                println("ok")
-//        }
+        if validSwipe {
+            scheduleBlock({ (timer) in
+                self.spawnRandomTile()
+            }, delay: kTileSpawnDelay)
+        }
         
+        unlockAllTiles()
+    }
+    
+    func unlockAllTiles() {
+        for x in 0..<_tiles.width {
+            for y in 0..<_tiles.height {
+                if let tile = _tiles[x, y] {
+                    tile.locked = false
+                }
+            }
+        }
     }
     
     
@@ -299,8 +305,8 @@ class GameBoard: CCNode {
     
     func tilePosition(x: Int, _ y: Int) -> CGPoint {
         return CGPoint(
-            x: CGFloat(Float(_borderWidth) + (Float(x) * (tileSize + Float(_borderWidth)))),
-            y: CGFloat(Float(_borderWidth) + (Float(y) * (tileSize + Float(_borderWidth))))
+            x: CGFloat(Float(_borderWidth) + (Float(x) * (tileSize + Float(_borderWidth))) + Float(tileSize / 2.0)),
+            y: CGFloat(Float(_borderWidth) + (Float(y) * (tileSize + Float(_borderWidth))) + Float(tileSize / 2.0))
         )
     }
     

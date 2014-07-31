@@ -206,6 +206,8 @@
 		917FE62C19818F6F00FE8E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62B19818F6F00FE8E8F /* main.m */; };
 		917FE63019818F7000FE8E8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62F19818F7000FE8E8F /* AppDelegate.m */; };
 		91B4A6C9198A5D00000CF0AD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4A6C8198A5D00000CF0AD /* Helpers.swift */; };
+		91B4A6CB198ACF58000CF0AD /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4A6CA198ACF58000CF0AD /* GameOverScene.swift */; };
+		91B4A6CD198ADA0C000CF0AD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4A6CC198ADA0C000CF0AD /* Button.swift */; };
 		91D08D25198959D2009D5195 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D24198959D2009D5195 /* GameScene.swift */; };
 		91D08D2819895AF3009D5195 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D2719895AF3009D5195 /* GameBoard.swift */; };
 /* End PBXBuildFile section */
@@ -621,6 +623,8 @@
 		917FE62E19818F6F00FE8E8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		917FE62F19818F7000FE8E8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		91B4A6C8198A5D00000CF0AD /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		91B4A6CA198ACF58000CF0AD /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		91B4A6CC198ADA0C000CF0AD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2048-Bridging-Header.h"; sourceTree = "<group>"; };
 		91D08D24198959D2009D5195 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		91D08D2719895AF3009D5195 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
@@ -1437,6 +1441,7 @@
 				917FE62E19818F6F00FE8E8F /* AppDelegate.h */,
 				917FE62F19818F7000FE8E8F /* AppDelegate.m */,
 				91D08D24198959D2009D5195 /* GameScene.swift */,
+				91B4A6CA198ACF58000CF0AD /* GameOverScene.swift */,
 				91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */,
 				91D08D2619895AE4009D5195 /* GameBoard */,
 			);
@@ -1453,6 +1458,7 @@
 				911A1BA719897AE500D1899B /* Matrix.swift */,
 				91327D6B198987FD0006C7B9 /* SwipeDirection.swift */,
 				91B4A6C8198A5D00000CF0AD /* Helpers.swift */,
+				91B4A6CC198ADA0C000CF0AD /* Button.swift */,
 			);
 			name = GameBoard;
 			sourceTree = "<group>";
@@ -1564,6 +1570,7 @@
 				917FE54C19818F6F00FE8E8F /* ALBuffer.m in Sources */,
 				917FE55219818F6F00FE8E8F /* ALChannelSource.m in Sources */,
 				917FE57519818F6F00FE8E8F /* IOSVersion.m in Sources */,
+				91B4A6CD198ADA0C000CF0AD /* Button.swift in Sources */,
 				917FE55B19818F6F00FE8E8F /* ALListener.m in Sources */,
 				917FE4FB19818F6F00FE8E8F /* CCGLView.m in Sources */,
 				917FE4EE19818F6F00FE8E8F /* CCGLView.m in Sources */,
@@ -1647,6 +1654,7 @@
 				917FE58E19818F6F00FE8E8F /* CCControl.m in Sources */,
 				917FE48819818F6E00FE8E8F /* CCParticleSystem.m in Sources */,
 				917FE48419818F6E00FE8E8F /* CCParticleExamples.m in Sources */,
+				91B4A6CB198ACF58000CF0AD /* GameOverScene.swift in Sources */,
 				917FE45019818F6E00FE8E8F /* CCConfiguration.m in Sources */,
 				917FE55519818F6F00FE8E8F /* ALContext.m in Sources */,
 				917FE42F19818F6E00FE8E8F /* CCActionCatmullRom.m in Sources */,

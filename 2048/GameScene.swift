@@ -24,7 +24,15 @@ class GameScene: CCScene {
             contentSize: Float(self.contentSize.width) - (self._gameBoardMargin * 2),
             tilesPerRow: 4
         )
-        gb.position = CGPoint(x: CGFloat(self._gameBoardMargin), y: 100)
+        
+        gb.positionType = CCPositionType(
+            xUnit: .Normalized,
+            yUnit: .Normalized,
+            corner: gb.positionType.corner
+        )
+        
+        gb.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        gb.position = CGPoint(x: 0.5, y: 0.5)
         gb.delegate = self
         
         return gb
@@ -39,6 +47,21 @@ class GameScene: CCScene {
             corner: .TopLeft
         )
         l.fontColor = CCColor(red: 0.47, green: 0.43, blue: 0.4)
+        
+        return l
+    }()
+    
+    lazy var _restartButton: CCButton = {
+        let l = Button(title: "RESTART", fontName: "HelveticaNeue-Bold", fontSize: 28)
+        
+        l.position = CGPoint(x: 0.5, y: 0.1)
+        l.positionType = CCPositionType(
+            xUnit: .Normalized,
+            yUnit: .Normalized,
+            corner: .BottomLeft
+        )
+        
+        l.setTarget(self, selector: "restartGame")
         
         return l
     }()
@@ -61,6 +84,15 @@ class GameScene: CCScene {
         addChild(_backgroundNode)
         addChild(_gameBoard)
         addChild(_scoreLabel)
+        addChild(_restartButton)
+    }
+    
+    
+    
+    // MARK: Target Actions
+    
+    func restartGame() {
+        CCDirector.sharedDirector().replaceScene(GameScene.scene())
     }
     
 }
@@ -72,7 +104,7 @@ extension GameScene: GameBoardDelegate {
     }
     
     func gameOverWithScore(score: Int) {
-    
+        
     }
     
 }

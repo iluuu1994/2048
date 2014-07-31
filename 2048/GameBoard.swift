@@ -251,6 +251,10 @@ class GameBoard: CCNode {
         }
     }
     
+    func gameOver() {
+        
+    }
+    
     
     
     

@@ -226,6 +226,7 @@ class GameBoard: CCNode {
         if validSwipe {
             scheduleBlock({ (timer) in
                 self.spawnRandomTile()
+                self.checkForGameOver()
             }, delay: kTileSpawnDelay)
         }
         
@@ -251,8 +252,48 @@ class GameBoard: CCNode {
         }
     }
     
-    func gameOver() {
+    func enclosingTilesOfTile(at: (x: Int, y: Int)) -> [Tile] {
+        var enclosingTiles = [Tile]()
         
+        if let tile = _tiles[at.x, at.y] {
+            for (etX, etY) in [(at.x + 1, at.y), (at.x - 1, at.y), (at.x, at.y + 1), (at.x, at.y - 1)] {
+                if etX >= 0 && etX < _tiles.width && etY >= 0 && etY < _tiles.height {
+                    if let enclosingTile = _tiles[etX, etY] {
+                        enclosingTiles += enclosingTile
+                    }
+                }
+            }
+        }
+        
+        return enclosingTiles
+    }
+    
+    func checkForGameOver() {
+        if emptyTiles().count == 0 {
+            for x in 0..<_tiles.width {
+                for y in 0..<_tiles.height {
+                    if let tile = _tiles[x, y] {
+                        let enclosingTiles = enclosingTilesOfTile((x: x, y: y))
+                        
+                        for enclosingTile in enclosingTiles {
+                            if tile.value == enclosingTile.value {
+                                return
+                            }
+                        }
+                    }
+                }
+            }
+            
+            gameOver()
+        }
+    }
+    
+    func gameOver() {
+        userInteractionEnabled = false
+        
+        scheduleBlock({ (timer) in
+            CCDirector.sharedDirector().replaceScene(GameOverScene(score: self.score))
+        }, delay: kGameOverDelay)
     }
     
     

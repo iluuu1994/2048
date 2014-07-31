@@ -8,8 +8,6 @@
 // -----------------------------------------------------------------------
 
 #import "AppDelegate.h"
-#import "IntroScene.h"
-#import "HelloWorldScene.h"
 #import "_048-Swift.h"
 
 @implementation AppDelegate

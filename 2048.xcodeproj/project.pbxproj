@@ -205,8 +205,6 @@
 		917FE62819818F6F00FE8E8F /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */; };
 		917FE62C19818F6F00FE8E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62B19818F6F00FE8E8F /* main.m */; };
 		917FE63019818F7000FE8E8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62F19818F7000FE8E8F /* AppDelegate.m */; };
-		917FE63319818F7000FE8E8F /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE63219818F7000FE8E8F /* HelloWorldScene.m */; };
-		917FE63619818F7000FE8E8F /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE63519818F7000FE8E8F /* IntroScene.m */; };
 		91B4A6C9198A5D00000CF0AD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4A6C8198A5D00000CF0AD /* Helpers.swift */; };
 		91D08D25198959D2009D5195 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D24198959D2009D5195 /* GameScene.swift */; };
 		91D08D2819895AF3009D5195 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D2719895AF3009D5195 /* GameBoard.swift */; };
@@ -622,10 +620,6 @@
 		917FE62B19818F6F00FE8E8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		917FE62E19818F6F00FE8E8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		917FE62F19818F7000FE8E8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		917FE63119818F7000FE8E8F /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		917FE63219818F7000FE8E8F /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
-		917FE63419818F7000FE8E8F /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
-		917FE63519818F7000FE8E8F /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		91B4A6C8198A5D00000CF0AD /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2048-Bridging-Header.h"; sourceTree = "<group>"; };
 		91D08D24198959D2009D5195 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -1442,10 +1436,6 @@
 			children = (
 				917FE62E19818F6F00FE8E8F /* AppDelegate.h */,
 				917FE62F19818F7000FE8E8F /* AppDelegate.m */,
-				917FE63119818F7000FE8E8F /* HelloWorldScene.h */,
-				917FE63219818F7000FE8E8F /* HelloWorldScene.m */,
-				917FE63419818F7000FE8E8F /* IntroScene.h */,
-				917FE63519818F7000FE8E8F /* IntroScene.m */,
 				91D08D24198959D2009D5195 /* GameScene.swift */,
 				91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */,
 				91D08D2619895AE4009D5195 /* GameBoard */,
@@ -1590,7 +1580,6 @@
 				911A1BA819897AE500D1899B /* Matrix.swift in Sources */,
 				917FE5A719818F6F00FE8E8F /* CCBAnimationManager.m in Sources */,
 				917FE51519818F6F00FE8E8F /* CCVertex.m in Sources */,
-				917FE63319818F7000FE8E8F /* HelloWorldScene.m in Sources */,
 				917FE44919818F6E00FE8E8F /* CCAnimationCache.m in Sources */,
 				917FE50319818F6F00FE8E8F /* base64.c in Sources */,
 				917FE48C19818F6E00FE8E8F /* CCParticleSystemBase.m in Sources */,
@@ -1702,7 +1691,6 @@
 				917FE48119818F6E00FE8E8F /* CCParticleBatchNode.m in Sources */,
 				917FE51B19818F6F00FE8E8F /* NSAttributedString+CCAdditions.m in Sources */,
 				917FE62C19818F6F00FE8E8F /* main.m in Sources */,
-				917FE63619818F7000FE8E8F /* IntroScene.m in Sources */,
 				917FE41919818F6E00FE8E8F /* CCEffectStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

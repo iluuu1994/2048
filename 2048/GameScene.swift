@@ -13,7 +13,7 @@ class GameScene: CCScene {
     
     // MARK: Instanc Variables
     
-    private var _gameBoardMargin: Float = 10.0
+    private var _gameBoardMargin: Float = 20.0
     
     lazy private var _backgroundNode: CCNodeColor = {
         CCNodeColor(color: CCColor(red: 0.98, green: 0.97, blue: 0.94))

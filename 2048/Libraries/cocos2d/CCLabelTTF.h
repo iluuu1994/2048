@@ -30,7 +30,7 @@
 #import "Platforms/CCNS.h"
 
 /**
- CCLabelTTF displays a rendered TTF font texture. The label is created from a platform font.
+ CCLabelTTF displays a 3ed TTF font texture. The label is created from a platform font.
  Attributed strings are supported on Mac and iOS6+ which allows for greater text formatting control.
  
  ### Notes

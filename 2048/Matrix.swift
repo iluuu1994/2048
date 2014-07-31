@@ -31,15 +31,6 @@ public class Matrix<T> {
     
     
     
-    // MARK: Methods
-    
-//    // TODO: Implement
-//    var indexOfItem: (x: Int, y: Int) {
-//    
-//    }
-    
-    
-    
     // MARK: Subscript
     
     subscript(x: Int, y: Int) -> T? {
@@ -55,42 +46,6 @@ public class Matrix<T> {
             
             _items[x + (y * width)] = newValue
         }
-    }
-    
-}
-
-
-extension Matrix: Sequence {
-
-    public func generate() -> MatrixGenerator<T> {
-        return MatrixGenerator(matrix: self)
-    }
-    
-}
-
-public class MatrixGenerator<T>: Generator {
-    
-    private let _matrix: Matrix<T>
-    private var _currentX = 0
-    private var _currentY = 0
-    
-    init(matrix: Matrix<T>) {
-        _matrix = matrix
-    }
-    
-    public func next() -> (x: Int, y: Int, value: T?)? {
-        var next = (_currentX, _currentY, _matrix[_currentX, _currentY])
-        
-        _currentX++
-        if _currentX >= _matrix.width {
-            _currentX = 0
-            _currentY++
-        }
-        if _currentY >= _matrix.height {
-            return nil
-        }
-        
-        return next
     }
     
 }

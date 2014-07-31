@@ -25,8 +25,22 @@ class GameScene: CCScene {
             tilesPerRow: 4
         )
         gb.position = CGPoint(x: CGFloat(self._gameBoardMargin), y: 100)
+        gb.delegate = self
         
         return gb
+    }()
+    
+    lazy var _scoreLabel: CCLabelTTF = {
+        let l = CCLabelTTF(string: "Score: 0", fontName: "HelveticaNeue-Bold", fontSize: 40)
+        l.position = CGPoint(x: 0.5, y: 0.1)
+        l.positionType = CCPositionType(
+            xUnit: .Normalized,
+            yUnit: .Normalized,
+            corner: .TopLeft
+        )
+        l.fontColor = CCColor(red: 0.47, green: 0.43, blue: 0.4)
+        
+        return l
     }()
 
     
@@ -46,8 +60,19 @@ class GameScene: CCScene {
     func initSubnodes() {
         addChild(_backgroundNode)
         addChild(_gameBoard)
+        addChild(_scoreLabel)
     }
     
+}
+
+extension GameScene: GameBoardDelegate {
+
+    func playerScoreIncreased(by: Int, totalScore: Int) {
+        _scoreLabel.string = "Score: \(totalScore)"
+    }
     
+    func gameOverWithScore(score: Int) {
+    
+    }
     
 }

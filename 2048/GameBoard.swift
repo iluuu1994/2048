@@ -8,6 +8,11 @@
 
 import Foundation
 
+@class_protocol
+protocol GameBoardDelegate {
+    func playerScoreIncreased(by: Int, totalScore: Int)
+    func gameOverWithScore(score: Int)
+}
 
 struct ForInLoop<T> {
     let initialValue: T
@@ -28,6 +33,10 @@ class GameBoard: CCNode {
     // MARK: Instance Variables
     
     let tilesPerRow: Int
+    var score: Int = 0
+    
+    // TODO: Check why program crashes when this is set to GameBoardDelegate
+    weak var delegate: GameScene?
     
     private let _tiles: Matrix<Tile>
     private let _borderWidth: Float = 10.0
@@ -203,6 +212,8 @@ class GameBoard: CCNode {
                                     mergedTile.runAction(mergedTile.mergeAnimation())
                                 })
                             ))
+                            
+                            increaseScore(mergedTile.value)
                         } else {
                             // Just move the tile
                             moveTile(tilePos, to: nnNewPos)
@@ -219,6 +230,15 @@ class GameBoard: CCNode {
         }
         
         unlockAllTiles()
+    }
+    
+    func increaseScore(by: Int) {
+        score += by
+        
+        if let nnDelegate = delegate {
+            //println(score)
+            nnDelegate.playerScoreIncreased(by, totalScore: score)
+        }
     }
     
     func unlockAllTiles() {

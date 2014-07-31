@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911A1BA4198967C000D1899B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A1BA3198967C000D1899B /* Tile.swift */; };
+		911A1BA619896C3200D1899B /* TilePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A1BA519896C3200D1899B /* TilePlaceholder.swift */; };
+		911A1BA819897AE500D1899B /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A1BA719897AE500D1899B /* Matrix.swift */; };
+		91327D6C198987FD0006C7B9 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91327D6B198987FD0006C7B9 /* SwipeDirection.swift */; };
+		91327D6E198996710006C7B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91327D6D198996710006C7B9 /* Constants.swift */; };
 		917FE3B519818F6E00FE8E8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B419818F6E00FE8E8F /* QuartzCore.framework */; };
 		917FE3B719818F6E00FE8E8F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B619818F6E00FE8E8F /* OpenGLES.framework */; };
 		917FE3B919818F6E00FE8E8F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B819818F6E00FE8E8F /* OpenAL.framework */; };
@@ -202,6 +207,8 @@
 		917FE63019818F7000FE8E8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62F19818F7000FE8E8F /* AppDelegate.m */; };
 		917FE63319818F7000FE8E8F /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE63219818F7000FE8E8F /* HelloWorldScene.m */; };
 		917FE63619818F7000FE8E8F /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE63519818F7000FE8E8F /* IntroScene.m */; };
+		91D08D25198959D2009D5195 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D24198959D2009D5195 /* GameScene.swift */; };
+		91D08D2819895AF3009D5195 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D08D2719895AF3009D5195 /* GameBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +222,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		911A1BA3198967C000D1899B /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		911A1BA519896C3200D1899B /* TilePlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilePlaceholder.swift; sourceTree = "<group>"; };
+		911A1BA719897AE500D1899B /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		91327D6B198987FD0006C7B9 /* SwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		91327D6D198996710006C7B9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		917FE3B119818F6E00FE8E8F /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917FE3B419818F6E00FE8E8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		917FE3B619818F6E00FE8E8F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -613,6 +625,9 @@
 		917FE63219818F7000FE8E8F /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		917FE63419818F7000FE8E8F /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		917FE63519818F7000FE8E8F /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
+		91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2048-Bridging-Header.h"; sourceTree = "<group>"; };
+		91D08D24198959D2009D5195 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		91D08D2719895AF3009D5195 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1429,8 +1444,24 @@
 				917FE63219818F7000FE8E8F /* HelloWorldScene.m */,
 				917FE63419818F7000FE8E8F /* IntroScene.h */,
 				917FE63519818F7000FE8E8F /* IntroScene.m */,
+				91D08D24198959D2009D5195 /* GameScene.swift */,
+				91D08D23198959D1009D5195 /* 2048-Bridging-Header.h */,
+				91D08D2619895AE4009D5195 /* GameBoard */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		91D08D2619895AE4009D5195 /* GameBoard */ = {
+			isa = PBXGroup;
+			children = (
+				91327D6D198996710006C7B9 /* Constants.swift */,
+				91D08D2719895AF3009D5195 /* GameBoard.swift */,
+				911A1BA3198967C000D1899B /* Tile.swift */,
+				911A1BA519896C3200D1899B /* TilePlaceholder.swift */,
+				911A1BA719897AE500D1899B /* Matrix.swift */,
+				91327D6B198987FD0006C7B9 /* SwipeDirection.swift */,
+			);
+			name = GameBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1553,6 +1584,7 @@
 				917FE54319818F6F00FE8E8F /* OALAudioTracks.m in Sources */,
 				917FE40F19818F6E00FE8E8F /* CCEffectColor.m in Sources */,
 				917FE40919818F6E00FE8E8F /* CCEffect.m in Sources */,
+				911A1BA819897AE500D1899B /* Matrix.swift in Sources */,
 				917FE5A719818F6F00FE8E8F /* CCBAnimationManager.m in Sources */,
 				917FE51519818F6F00FE8E8F /* CCVertex.m in Sources */,
 				917FE63319818F7000FE8E8F /* HelloWorldScene.m in Sources */,
@@ -1586,13 +1618,16 @@
 				917FE49A19818F6E00FE8E8F /* CCPhysicsShape.m in Sources */,
 				917FE42019818F6E00FE8E8F /* CCRenderer.m in Sources */,
 				917FE4B519818F6E00FE8E8F /* CCSprite.m in Sources */,
+				911A1BA619896C3200D1899B /* TilePlaceholder.swift in Sources */,
 				917FE53D19818F6F00FE8E8F /* OALAudioTrack.m in Sources */,
 				917FE57E19818F6F00FE8E8F /* NSMutableDictionary+WeakReferences.m in Sources */,
 				917FE43C19818F6E00FE8E8F /* CCActionManager.m in Sources */,
 				917FE49E19818F6E00FE8E8F /* CCProgressNode.m in Sources */,
 				917FE4AA19818F6E00FE8E8F /* CCResponderManager.m in Sources */,
+				91D08D2819895AF3009D5195 /* GameBoard.swift in Sources */,
 				917FE4DC19818F6E00FE8E8F /* CCTransition.m in Sources */,
 				917FE53319818F6F00FE8E8F /* OALActionManager.m in Sources */,
+				91D08D25198959D2009D5195 /* GameScene.swift in Sources */,
 				917FE49719818F6E00FE8E8F /* CCPhysicsNode.m in Sources */,
 				917FE53919818F6F00FE8E8F /* OALUtilityActions.m in Sources */,
 				917FE47119818F6E00FE8E8F /* CCMotionStreak.m in Sources */,
@@ -1606,6 +1641,7 @@
 				917FE5B619818F6F00FE8E8F /* CCBLocalizationManager.m in Sources */,
 				917FE49419818F6E00FE8E8F /* CCPhysicsJoint.m in Sources */,
 				917FE4C919818F6E00FE8E8F /* CCTextureCache.m in Sources */,
+				911A1BA4198967C000D1899B /* Tile.swift in Sources */,
 				917FE40D19818F6E00FE8E8F /* CCEffectContrast.m in Sources */,
 				917FE59819818F6F00FE8E8F /* CCSlider.m in Sources */,
 				917FE41519818F6E00FE8E8F /* CCEffectPixellate.m in Sources */,
@@ -1631,6 +1667,7 @@
 				917FE4A719818F6E00FE8E8F /* CCResponder.m in Sources */,
 				917FE4A319818F6E00FE8E8F /* CCRenderTexture.m in Sources */,
 				917FE45B19818F6E00FE8E8F /* ccFPSImages.m in Sources */,
+				91327D6E198996710006C7B9 /* Constants.swift in Sources */,
 				917FE56D19818F6F00FE8E8F /* OALAudioSession.m in Sources */,
 				917FE4FE19818F6F00FE8E8F /* CCWindow.m in Sources */,
 				917FE4BE19818F6E00FE8E8F /* CCSpriteFrame.m in Sources */,
@@ -1642,6 +1679,7 @@
 				917FE46619818F6E00FE8E8F /* CCNodeColor.m in Sources */,
 				917FE4F419818F6F00FE8E8F /* CCAppDelegate.m in Sources */,
 				917FE45419818F6E00FE8E8F /* CCDirector.m in Sources */,
+				91327D6C198987FD0006C7B9 /* SwipeDirection.swift in Sources */,
 				917FE43219818F6E00FE8E8F /* CCActionEase.m in Sources */,
 				917FE41319818F6E00FE8E8F /* CCEffectGlow.m in Sources */,
 				917FE55F19818F6F00FE8E8F /* ALSoundSourcePool.m in Sources */,
@@ -1797,6 +1835,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1806,12 +1845,16 @@
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/objectivec/include\"",
 				);
 				INFOPLIST_FILE = 2048/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "2048/2048-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1821,6 +1864,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "2048/Supporting Files/Prefix.pch";
@@ -1829,12 +1873,15 @@
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/objectivec/include\"",
 				);
 				INFOPLIST_FILE = 2048/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "2048/2048-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1859,6 +1906,7 @@
 				917FE63B19818F7000FE8E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		917FE63C19818F7000FE8E8F /* Build configuration list for PBXNativeTarget "2048" */ = {
 			isa = XCConfigurationList;
@@ -1867,6 +1915,7 @@
 				917FE63E19818F7000FE8E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

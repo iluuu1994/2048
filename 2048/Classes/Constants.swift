@@ -20,3 +20,4 @@ let kTileMergeScaleTo: Float = 1.1
 let kTileMergeScaleDuration = 0.1
 
 let kGameOverDelay: CCTime = 1.0
+let kYouWonDelay: CCTime = 1.0

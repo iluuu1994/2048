@@ -103,8 +103,16 @@ extension GameScene: GameBoardDelegate {
         _scoreLabel.string = "Score: \(totalScore)"
     }
     
+    func playerWonWithScore(score: Int) {
+        scheduleBlock({ (timer) in
+            CCDirector.sharedDirector().replaceScene(YouWinScene.scene(gameScene: self, score: score))
+        }, delay: kYouWonDelay)
+    }
+    
     func gameOverWithScore(score: Int) {
-        
+        scheduleBlock({ (timer) in
+            CCDirector.sharedDirector().replaceScene(GameOverScene(score: score))
+        }, delay: kGameOverDelay)
     }
     
 }

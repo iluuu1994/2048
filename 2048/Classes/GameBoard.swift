@@ -11,6 +11,7 @@ import Foundation
 @class_protocol
 protocol GameBoardDelegate {
     func playerScoreIncreased(by: Int, totalScore: Int)
+    func playerWonWithScore(score: Int)
     func gameOverWithScore(score: Int)
 }
 
@@ -40,6 +41,7 @@ class GameBoard: CCNode {
     
     private let _tiles: Matrix<Tile>
     private let _borderWidth: Float = 10.0
+    private var _didShowYouWinScene = false
     
     lazy private var _backgroundNode: CCNodeColor = {
         CCNodeColor(color: CCColor(red: 0.73, green: 0.68, blue: 0.63),
@@ -237,8 +239,11 @@ class GameBoard: CCNode {
         score += by
         
         if let nnDelegate = delegate {
-            //println(score)
             nnDelegate.playerScoreIncreased(by, totalScore: score)
+            
+            if by == 2048 {
+                youWin()
+            }
         }
     }
     
@@ -289,11 +294,19 @@ class GameBoard: CCNode {
     }
     
     func gameOver() {
-        userInteractionEnabled = false
-        
-        scheduleBlock({ (timer) in
-            CCDirector.sharedDirector().replaceScene(GameOverScene(score: self.score))
-        }, delay: kGameOverDelay)
+        if let nnDelegate = delegate {
+            nnDelegate.gameOverWithScore(score)
+        }
+    }
+    
+    func youWin() {
+        if !_didShowYouWinScene {
+            if let nnDelegate = delegate {
+                nnDelegate.playerWonWithScore(score)
+            }
+            
+            _didShowYouWinScene = true
+        }
     }
     
     

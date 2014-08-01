@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912DD14D198BF2A600EDB1E4 /* YouWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */; };
 		917FE3B519818F6E00FE8E8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B419818F6E00FE8E8F /* QuartzCore.framework */; };
 		917FE3B719818F6E00FE8E8F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B619818F6E00FE8E8F /* OpenGLES.framework */; };
 		917FE3B919818F6E00FE8E8F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B819818F6E00FE8E8F /* OpenAL.framework */; };
@@ -210,7 +211,6 @@
 		9187DD2A198AEBE3006D2FF0 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */; };
 		9187DD2B198AEBE3006D2FF0 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD21198AEBE3006D2FF0 /* Tile.swift */; };
 		9187DD2C198AEBE3006D2FF0 /* TilePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD22198AEBE3006D2FF0 /* TilePlaceholder.swift */; };
-		91CCF30D198BE1CD004907A5 /* YouWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCF30C198BE1CD004907A5 /* YouWinScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +224,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouWinScene.swift; path = Classes/YouWinScene.swift; sourceTree = "<group>"; };
 		917FE3B119818F6E00FE8E8F /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917FE3B419818F6E00FE8E8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		917FE3B619818F6E00FE8E8F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -629,7 +630,6 @@
 		9187DD21198AEBE3006D2FF0 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = Classes/Tile.swift; sourceTree = "<group>"; };
 		9187DD22198AEBE3006D2FF0 /* TilePlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TilePlaceholder.swift; path = Classes/TilePlaceholder.swift; sourceTree = "<group>"; };
 		9187DD2D198AEC03006D2FF0 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2048-Bridging-Header.h"; path = "Supporting Files/2048-Bridging-Header.h"; sourceTree = "<group>"; };
-		91CCF30C198BE1CD004907A5 /* YouWinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouWinScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1448,12 +1448,12 @@
 				9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */,
 				9187DD1C198AEBE3006D2FF0 /* GameOverScene.swift */,
 				9187DD1D198AEBE3006D2FF0 /* GameScene.swift */,
-				91CCF30C198BE1CD004907A5 /* YouWinScene.swift */,
 				9187DD1E198AEBE3006D2FF0 /* Helpers.swift */,
 				9187DD1F198AEBE3006D2FF0 /* Matrix.swift */,
 				9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */,
 				9187DD21198AEBE3006D2FF0 /* Tile.swift */,
 				9187DD22198AEBE3006D2FF0 /* TilePlaceholder.swift */,
+				912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1679,7 +1679,7 @@
 				917FE41319818F6E00FE8E8F /* CCEffectGlow.m in Sources */,
 				917FE55F19818F6F00FE8E8F /* ALSoundSourcePool.m in Sources */,
 				917FE5AA19818F6F00FE8E8F /* CCBKeyframe.m in Sources */,
-				91CCF30D198BE1CD004907A5 /* YouWinScene.swift in Sources */,
+				912DD14D198BF2A600EDB1E4 /* YouWinScene.swift in Sources */,
 				917FE46019818F6E00FE8E8F /* CCLabelBMFont.m in Sources */,
 				917FE54F19818F6F00FE8E8F /* ALCaptureDevice.m in Sources */,
 				917FE4D319818F6E00FE8E8F /* CCTiledMapLayer.m in Sources */,

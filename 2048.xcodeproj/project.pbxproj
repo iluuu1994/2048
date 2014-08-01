@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		912DD14D198BF2A600EDB1E4 /* YouWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */; };
+		912DD151198BF42B00EDB1E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DD150198BF42B00EDB1E4 /* AppDelegate.swift */; };
 		917FE3B519818F6E00FE8E8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B419818F6E00FE8E8F /* QuartzCore.framework */; };
 		917FE3B719818F6E00FE8E8F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B619818F6E00FE8E8F /* OpenGLES.framework */; };
 		917FE3B919818F6E00FE8E8F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B819818F6E00FE8E8F /* OpenAL.framework */; };
@@ -200,7 +201,6 @@
 		917FE62619818F6F00FE8E8F /* ChipmunkSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62519818F6F00FE8E8F /* ChipmunkSpace.m */; };
 		917FE62819818F6F00FE8E8F /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */; };
 		917FE62C19818F6F00FE8E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62B19818F6F00FE8E8F /* main.m */; };
-		917FE63019818F7000FE8E8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62F19818F7000FE8E8F /* AppDelegate.m */; };
 		9187DD23198AEBE3006D2FF0 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD19198AEBE3006D2FF0 /* Button.swift */; };
 		9187DD24198AEBE3006D2FF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD1A198AEBE3006D2FF0 /* Constants.swift */; };
 		9187DD25198AEBE3006D2FF0 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */; };
@@ -225,6 +225,7 @@
 
 /* Begin PBXFileReference section */
 		912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouWinScene.swift; path = Classes/YouWinScene.swift; sourceTree = "<group>"; };
+		912DD150198BF42B00EDB1E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		917FE3B119818F6E00FE8E8F /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917FE3B419818F6E00FE8E8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		917FE3B619818F6E00FE8E8F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -617,8 +618,6 @@
 		917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Chipmunk.txt; path = Libraries/LICENSE_Chipmunk.txt; sourceTree = "<group>"; };
 		917FE62A19818F6F00FE8E8F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = "Supporting Files/Prefix.pch"; sourceTree = "<group>"; };
 		917FE62B19818F6F00FE8E8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
-		917FE62E19818F6F00FE8E8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
-		917FE62F19818F7000FE8E8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		9187DD19198AEBE3006D2FF0 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Classes/Button.swift; sourceTree = "<group>"; };
 		9187DD1A198AEBE3006D2FF0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Classes/Constants.swift; sourceTree = "<group>"; };
 		9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard.swift; path = Classes/GameBoard.swift; sourceTree = "<group>"; };
@@ -1441,8 +1440,7 @@
 		917FE62D19818F6F00FE8E8F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				917FE62E19818F6F00FE8E8F /* AppDelegate.h */,
-				917FE62F19818F7000FE8E8F /* AppDelegate.m */,
+				912DD150198BF42B00EDB1E4 /* AppDelegate.swift */,
 				9187DD19198AEBE3006D2FF0 /* Button.swift */,
 				9187DD1A198AEBE3006D2FF0 /* Constants.swift */,
 				9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */,
@@ -1672,6 +1670,7 @@
 				917FE43519818F6E00FE8E8F /* CCActionInstant.m in Sources */,
 				917FE43819818F6E00FE8E8F /* CCActionInterval.m in Sources */,
 				917FE46619818F6E00FE8E8F /* CCNodeColor.m in Sources */,
+				912DD151198BF42B00EDB1E4 /* AppDelegate.swift in Sources */,
 				917FE4F419818F6F00FE8E8F /* CCAppDelegate.m in Sources */,
 				917FE45419818F6E00FE8E8F /* CCDirector.m in Sources */,
 				9187DD2A198AEBE3006D2FF0 /* SwipeDirection.swift in Sources */,
@@ -1689,7 +1688,6 @@
 				917FE44619818F6E00FE8E8F /* CCAnimation.m in Sources */,
 				917FE59219818F6F00FE8E8F /* CCControlTextureFactory.m in Sources */,
 				917FE53619818F6F00FE8E8F /* OALAudioActions.m in Sources */,
-				917FE63019818F7000FE8E8F /* AppDelegate.m in Sources */,
 				9187DD27198AEBE3006D2FF0 /* GameScene.swift in Sources */,
 				917FE4E719818F6F00FE8E8F /* CCDirectorIOS.m in Sources */,
 				917FE48119818F6E00FE8E8F /* CCParticleBatchNode.m in Sources */,

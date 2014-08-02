@@ -158,10 +158,5 @@ public class Tile: CCNode {
             two: CCActionScaleTo(duration: kTileMergeScaleDuration, scale: kTileMergeScaleFrom)
         )
     }
-    
-//    override public func runAction(action: CCAction!) -> CCAction! {
-//        stopAllActions()
-//        return super.runAction(action)
-//    }
 
 }

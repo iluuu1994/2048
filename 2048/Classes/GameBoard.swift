@@ -166,6 +166,7 @@ class GameBoard: CCNode {
         }
         
         var validSwipe = false
+        var hasMerged = false
         
         for var firstV = firstI.initialValue; firstI.condition(firstV); firstV += firstI.incrementalValue {
             for var secondV = secondI.initialValue; secondI.condition(secondV); secondV += secondI.incrementalValue {
@@ -192,6 +193,8 @@ class GameBoard: CCNode {
                         
                         if let fixedTile = _tiles[nnNewPos.x, nnNewPos.y] {
                             // Move the tile and merge it with the other tile
+                            hasMerged = true
+                            
                             removeTile(nnNewPos)
                             removeTile(tilePos)
                             
@@ -226,10 +229,17 @@ class GameBoard: CCNode {
         }
         
         if validSwipe {
+            // Spawn a new tile on every move
             scheduleBlock({ (timer) in
                 self.spawnRandomTile()
                 self.checkForGameOver()
             }, delay: kTileSpawnDelay)
+            
+            if !hasMerged {
+                OALSimpleAudio.sharedInstance().playEffect("Move.wav")
+            } else {
+                OALSimpleAudio.sharedInstance().playEffect("Merge.wav")
+            }
         }
         
         unlockAllTiles()

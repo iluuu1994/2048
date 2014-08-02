@@ -40,7 +40,7 @@ public class Tile: CCNode {
             case 2048:
                 return CCColor(red: 0.93, green: 0.78, blue: 0.35)
             default:
-                return CCColor()
+                return CCColor(red: 0.93, green: 0.78, blue: 0.35)
         }
     }
     

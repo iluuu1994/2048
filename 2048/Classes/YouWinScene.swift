@@ -18,7 +18,7 @@ class YouWinScene: CCScene {
     
     lazy private var _backgroundNode: CCNodeColor = {
         CCNodeColor(color: CCColor(red: 0.98, green: 0.97, blue: 0.94))
-        }()
+    }()
     
     lazy var _youWinLabel: CCLabelTTF = {
         let l = CCLabelTTF(string: "You Win!", fontName: "HelveticaNeue-Bold", fontSize: 40)
@@ -31,7 +31,7 @@ class YouWinScene: CCScene {
         l.fontColor = CCColor(red: 0.47, green: 0.43, blue: 0.4)
         
         return l
-        }()
+    }()
     
     lazy var _scoreLabel: CCLabelTTF = {
         let l = CCLabelTTF(string: "Score: \(self._score)", fontName: "HelveticaNeue-Bold", fontSize: 28)
@@ -44,7 +44,7 @@ class YouWinScene: CCScene {
         l.fontColor = CCColor(red: 0.67, green: 0.63, blue: 0.6)
         
         return l
-        }()
+    }()
     
     lazy var _goOnButton: CCButton = {
         let l = Button(title: "GO ON", fontName: "HelveticaNeue-Bold", fontSize: 28)
@@ -59,7 +59,7 @@ class YouWinScene: CCScene {
         l.setTarget(self, selector: "goOn")
         
         return l
-        }()
+    }()
     
     
     
@@ -83,6 +83,8 @@ class YouWinScene: CCScene {
         addChild(_youWinLabel)
         addChild(_scoreLabel)
         addChild(_goOnButton)
+        
+        OALSimpleAudio.sharedInstance().playEffect("Win.wav")
     }
     
     

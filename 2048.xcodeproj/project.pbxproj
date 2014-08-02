@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		912DD14D198BF2A600EDB1E4 /* YouWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */; };
 		912DD151198BF42B00EDB1E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DD150198BF42B00EDB1E4 /* AppDelegate.swift */; };
+		9157888B198D46E60082A0FD /* Merge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91578888198D46E60082A0FD /* Merge.wav */; };
+		9157888C198D46E60082A0FD /* Move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91578889198D46E60082A0FD /* Move.wav */; };
+		9157888D198D46E60082A0FD /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9157888A198D46E60082A0FD /* Win.wav */; };
 		917FE3B519818F6E00FE8E8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B419818F6E00FE8E8F /* QuartzCore.framework */; };
 		917FE3B719818F6E00FE8E8F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B619818F6E00FE8E8F /* OpenGLES.framework */; };
 		917FE3B919818F6E00FE8E8F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917FE3B819818F6E00FE8E8F /* OpenAL.framework */; };
@@ -226,6 +229,9 @@
 /* Begin PBXFileReference section */
 		912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouWinScene.swift; path = Classes/YouWinScene.swift; sourceTree = "<group>"; };
 		912DD150198BF42B00EDB1E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
+		91578888198D46E60082A0FD /* Merge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Merge.wav; path = Resources/Sound/Merge.wav; sourceTree = "<group>"; };
+		91578889198D46E60082A0FD /* Move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Move.wav; path = Resources/Sound/Move.wav; sourceTree = "<group>"; };
+		9157888A198D46E60082A0FD /* Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Win.wav; path = Resources/Sound/Win.wav; sourceTree = "<group>"; };
 		917FE3B119818F6E00FE8E8F /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917FE3B419818F6E00FE8E8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		917FE3B619818F6E00FE8E8F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -653,6 +659,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91578887198D46BE0082A0FD /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				91578888198D46E60082A0FD /* Merge.wav */,
+				91578889198D46E60082A0FD /* Move.wav */,
+				9157888A198D46E60082A0FD /* Win.wav */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 		917FE3A819818F6E00FE8E8F = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +725,7 @@
 				917FE3F319818F6E00FE8E8F /* Info.plist */,
 				917FE3F419818F6E00FE8E8F /* iTunesArtwork */,
 				917FE3F619818F6E00FE8E8F /* iTunesArtwork@2x */,
+				91578887198D46BE0082A0FD /* Sound */,
 				917FE3D819818F6E00FE8E8F /* Icons */,
 			);
 			name = Resources;
@@ -1525,6 +1542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				917FE3D319818F6E00FE8E8F /* Default@2x.png in Resources */,
+				9157888D198D46E60082A0FD /* Win.wav in Resources */,
 				917FE3E619818F6E00FE8E8F /* Icon-120.png in Resources */,
 				917FE3DC19818F6E00FE8E8F /* Icon@2x.png in Resources */,
 				917FE3EE19818F6E00FE8E8F /* Icon-Small@2x.png in Resources */,
@@ -1534,6 +1552,7 @@
 				917FE3E819818F6E00FE8E8F /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				917FE3D719818F6E00FE8E8F /* Default-Landscape~ipad.png in Resources */,
 				917FE3EC19818F6E00FE8E8F /* Icon-Small.png in Resources */,
+				9157888B198D46E60082A0FD /* Merge.wav in Resources */,
 				917FE3EA19818F6E00FE8E8F /* Icon-Small-50.png in Resources */,
 				917FE62819818F6F00FE8E8F /* LICENSE_Chipmunk.txt in Resources */,
 				917FE3DE19818F6E00FE8E8F /* Icon-72.png in Resources */,
@@ -1542,6 +1561,7 @@
 				917FE3D519818F6E00FE8E8F /* Default-568h@2x.png in Resources */,
 				917FE3F519818F6E00FE8E8F /* iTunesArtwork in Resources */,
 				917FE3F019818F6E00FE8E8F /* Icon-Spotlight-iOS7.png in Resources */,
+				9157888C198D46E60082A0FD /* Move.wav in Resources */,
 				917FE3E419818F6E00FE8E8F /* Icon-76@2x.png in Resources */,
 				917FE3F219818F6E00FE8E8F /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				917FE3E219818F6E00FE8E8F /* Icon-76.png in Resources */,

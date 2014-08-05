@@ -8,13 +8,21 @@
 
 import Foundation
 
+
+/**
+ * The GameBoardDelegate is used to define an interface that can be used to receive information about the progress of the game.
+ */
 protocol GameBoardDelegate: class {
     func playerScoreIncreased(by: Int, totalScore: Int)
     func playerWonWithScore(score: Int)
     func gameOverWithScore(score: Int)
 }
 
-struct ForInLoop<T> {
+
+/**
+ * The ForInLoop is used to define an interface for for loops
+ */
+private struct ForLoop<T> {
     let initialValue: T
     let condition: (T) -> Bool
     let incrementalValue: T
@@ -26,60 +34,50 @@ struct ForInLoop<T> {
     }
 }
 
+typealias TilePosition = (x: Int, y: Int)
+
 
 @objc(TFGameBoard)
-class GameBoard: CCNode {
+public class GameBoard: GameObject {
     
     // MARK: Instance Variables
     
-    let tilesPerRow: Int
-    var score: Int = 0
+    let gridSize: Int
+    internal(set) var score: Int = 0
     
     // TODO: Check why program crashes when this is set to GameBoardDelegate
     weak var delegate: GameScene?
     
-    private let _tiles: Matrix<Tile>
-    private let _borderWidth: Float = 10.0
+    internal let _tiles: Matrix<Tile>
     private var _didShowYouWinScene = false
     
-    lazy private var _backgroundNode: CCNodeColor = {
-        CCNodeColor(color: CCColor(red: 0.73, green: 0.68, blue: 0.63),
-                    width: Float(self.contentSize.width),
-                    height: Float(self.contentSize.height))
-    }()
+    public var gameBoardView: GameBoardView! {
+        get {
+            return view as GameBoardView
+        }
+    }
     
 
     
     // MARK: Initialization
     
-    init(contentSize: Float, tilesPerRow: Int) {
-        assert(tilesPerRow > 0, "Game Board must have a size of greater than 0!")
-        self.tilesPerRow = tilesPerRow
-        _tiles = Matrix<Tile>(width: tilesPerRow, height: tilesPerRow)
+    init(gridSize: Int) {
+        assert(gridSize > 0, "Game Board must have a grid size of greater than 0!")
+        self.gridSize = gridSize
+        _tiles = Matrix<Tile>(width: self.gridSize, height: self.gridSize)
         
         super.init()
-        
-        self.contentSize = CGSize(width: CGFloat(contentSize), height: CGFloat(contentSize))
-        initSubnodes()
-        userInteractionEnabled = true
-    }
-    
-    func initSubnodes() {
-        addChild(_backgroundNode)
-        
-        for x in 0..<tilesPerRow {
-            for y in 0..<tilesPerRow {
-                let tilePlaceholder = TilePlaceholder(size: tileSize)
-                tilePlaceholder.position = tilePosition(x, y)
-                
-                addChild(tilePlaceholder)
-            }
-        }
         
         for times in 0..<2 {
             spawnRandomTile()
         }
     }
+    
+    override func loadView() {
+        view = GameBoardView(gameBoard: self)
+    }
+    
+    
     
     
     
@@ -90,13 +88,13 @@ class GameBoard: CCNode {
         let position = possiblePositions[randomWhole(0, possiblePositions.count - 1)]
         let value = randomWhole(0, 6) <= 5 ? 2 : 4
         
-        let tile = Tile(size: tileSize, value: value)
-        addTile(tile, x: position.x, y: position.y)
-        tile.runAction(tile.spawnAnimation())
+        let tile = Tile(value: value)
+        addTile(tile, to: position)
+        gameBoardView.spawnTileView(tile.tileView, at: position)
     }
     
-    func emptyTiles() -> [(x: Int, y: Int)] {
-        var emptyTiles = Array<(x: Int, y: Int)>()
+    func emptyTiles() -> [TilePosition] {
+        var emptyTiles = Array<TilePosition>()
         for x in 0..<_tiles.width {
             for y in 0..<_tiles.height {
                 if _tiles[x, y] == nil {
@@ -108,59 +106,57 @@ class GameBoard: CCNode {
         return emptyTiles
     }
     
-    func addTile(tile: Tile, x: Int, y: Int) {
-        if let oldTile = _tiles[x,y] {
-            oldTile.removeFromParent()
-        }
-        
-        _tiles[x, y] = tile
-        tile.position = tilePosition(x, y)
-        addChild(tile)
+    func addTile(tile: Tile, to: TilePosition) {
+        assert(_tiles[to.x, to.y] == nil, "The tile position is not free.")
+        _tiles[to.x, to.y] = tile
     }
     
-    func removeTile(at: (x: Int, y: Int)) {
+    func removeTile(at: TilePosition) {
+        assert(_tiles[at.x, at.y] != nil, "There is no tile at this position.")
+        
         if let tile = _tiles[at.x, at.y] {
             _tiles[at.x, at.y] = nil
         }
     }
     
-    func moveTile(at: (x: Int, y: Int), to:(x: Int, y: Int)) {
+    func moveTile(at: TilePosition, to:TilePosition) {
         assert(!(at.x == to.x && at.y == to.y), "The tile is already at this location.")
         assert(_tiles[to.x, to.y] == nil, "The new tile position is not free.")
         
         if let tile = _tiles[at.x, at.y] {
             _tiles[at.x, at.y] = nil
             _tiles[to.x, to.y] = tile
-            tile.runAction(tile.moveToAnimation(tilePosition(to.x, to.y)))
+            
+            gameBoardView.moveTileView(tile.tileView, to: to)
         }
     }
     
     func performSwipeInDirection(direction: SwipeDirection) {
-        var firstI: ForInLoop<Int>!
-        var secondI: ForInLoop<Int>!
-        var ppI: ForInLoop<Int>!
-        var gV: (Int, Int) -> (x: Int, y: Int)
+        var firstI: ForLoop<Int>!
+        var secondI: ForLoop<Int>!
+        var ppI: ForLoop<Int>!
+        var gV: (Int, Int) -> TilePosition
         
         switch direction {
             case .Left:
-                firstI = ForInLoop(1, {$0 < self._tiles.width}, 1)
-                secondI = ForInLoop(0, {$0 < self._tiles.height}, 1)
-                ppI = ForInLoop(0 /* Ignored */, {$0 >= 0}, -1)
+                firstI = ForLoop(1, {$0 < self._tiles.width}, 1)
+                secondI = ForLoop(0, {$0 < self._tiles.height}, 1)
+                ppI = ForLoop(0 /* Ignored */, {$0 >= 0}, -1)
                 gV = {($0,$1)}
             case .Right:
-                firstI = ForInLoop(self._tiles.width - 2, {$0 >= 0}, -1)
-                secondI = ForInLoop(0, {$0 < self._tiles.height}, 1)
-                ppI = ForInLoop(0 /* Ignored */, {$0 < self._tiles.height}, 1)
+                firstI = ForLoop(self._tiles.width - 2, {$0 >= 0}, -1)
+                secondI = ForLoop(0, {$0 < self._tiles.height}, 1)
+                ppI = ForLoop(0 /* Ignored */, {$0 < self._tiles.height}, 1)
                 gV = {($0,$1)}
             case .Up:
-                firstI = ForInLoop(self._tiles.height - 2, {$0 >= 0}, -1)
-                secondI = ForInLoop(0, {$0 < self._tiles.width}, 1)
-                ppI = ForInLoop(0 /* Ignored */, {$0 < self._tiles.height}, 1)
+                firstI = ForLoop(self._tiles.height - 2, {$0 >= 0}, -1)
+                secondI = ForLoop(0, {$0 < self._tiles.width}, 1)
+                ppI = ForLoop(0 /* Ignored */, {$0 < self._tiles.height}, 1)
                 gV = {($1,$0)}
             case .Down:
-                firstI = ForInLoop(1, {$0 < self._tiles.height}, 1)
-                secondI = ForInLoop(0, {$0 < self._tiles.width}, 1)
-                ppI = ForInLoop(0 /* Ignored */, {$0 >= 0}, -1)
+                firstI = ForLoop(1, {$0 < self._tiles.height}, 1)
+                secondI = ForLoop(0, {$0 < self._tiles.width}, 1)
+                ppI = ForLoop(0 /* Ignored */, {$0 >= 0}, -1)
                 gV = {($1,$0)}
         }
         
@@ -172,7 +168,7 @@ class GameBoard: CCNode {
                 let tilePos = gV(firstV, secondV)
                 
                 if let tile = _tiles[tilePos.x, tilePos.y] {
-                    var newPos: (x: Int, y: Int)?
+                    var newPos: TilePosition?
                     
                     possiblePositions: for var pp = firstV + ppI.incrementalValue; ppI.condition(pp); pp += ppI.incrementalValue {
                         let possiblePos = gV(pp, secondV)
@@ -197,25 +193,18 @@ class GameBoard: CCNode {
                             removeTile(nnNewPos)
                             removeTile(tilePos)
                             
-                            let mergedTile = Tile(size: tileSize, value: tile.value + fixedTile.value)
+                            let mergedTile = Tile(value: tile.value + fixedTile.value)
                             mergedTile.locked = true
-                            mergedTile.visible = false
                             
-                            addTile(
-                                mergedTile,
-                                x: nnNewPos.x,
-                                y: nnNewPos.y
+                            addTile(mergedTile, to: nnNewPos)
+                            
+                            gameBoardView.mergeTileView(
+                                tile.tileView,
+                                fixedTile.tileView,
+                                intoTileView: mergedTile.tileView,
+                                mergePosition: nnNewPos
                             )
                             
-                            tile.runAction(CCActionSequence(
-                                one: tile.moveToAnimation(tilePosition(nnNewPos.x, nnNewPos.y)),
-                                two: CCActionCallBlock(block: {
-                                    tile.removeFromParent()
-                                    fixedTile.removeFromParent()
-                                    mergedTile.visible = true
-                                    mergedTile.runAction(mergedTile.mergeAnimation())
-                                })
-                            ))
                             
                             increaseScore(mergedTile.value)
                         } else {
@@ -229,7 +218,7 @@ class GameBoard: CCNode {
         
         if validSwipe {
             // Spawn a new tile on every move
-            scheduleBlock({ (timer) in
+            view.scheduleBlock({ (timer) in
                 self.spawnRandomTile()
                 self.checkForGameOver()
             }, delay: kTileSpawnDelay)
@@ -266,7 +255,7 @@ class GameBoard: CCNode {
         }
     }
     
-    func enclosingTilesOfTile(at: (x: Int, y: Int)) -> [Tile] {
+    func enclosingTilesOfTile(at: TilePosition) -> [Tile] {
         var enclosingTiles = [Tile]()
         
         if let tile = _tiles[at.x, at.y] {
@@ -316,73 +305,6 @@ class GameBoard: CCNode {
             
             _didShowYouWinScene = true
         }
-    }
-    
-    
-    
-    
-    
-    
-    // MARK: Touch handling
-    
-    private var _lastTouchBegan: CGPoint?
-
-    override func touchBegan(touch: UITouch!, withEvent event: UIEvent!) {
-        _lastTouchBegan = touch.locationInNode(self)
-    }
-    
-    override func touchMoved(touch: UITouch!, withEvent event: UIEvent!) {
-        if let lastTouchBegan = _lastTouchBegan {
-            let deltaX = touch.locationInNode(self).x - lastTouchBegan.x
-            let deltaY = touch.locationInNode(self).y - lastTouchBegan.y
-            
-            if abs(deltaX) > 20 || abs(deltaY) > 20 {
-                if abs(deltaX) > abs(deltaY) {
-                    // Left or right swipe
-                    if deltaX > 0 {
-                        // Right
-                        performSwipeInDirection(.Right)
-                    } else {
-                        // Left
-                        performSwipeInDirection(.Left)
-                    }
-                } else {
-                    // Up or down swipe
-                    if deltaY > 0 {
-                        // Up
-                        performSwipeInDirection(.Up)
-                    } else {
-                        // Down
-                        performSwipeInDirection(.Down)
-                    }
-                }
-                
-                _lastTouchBegan = nil
-            }
-        }
-    }
-    
-    override func touchEnded(touch: UITouch!, withEvent event: UIEvent!) {
-        _lastTouchBegan = nil
-    }
-    
-    
-    
-    // MARK: Helpers
-    
-    var boardSize: Float {
-        return Float(contentSize.width)
-    }
-    
-    var tileSize: Float {
-        return (boardSize - (_borderWidth*Float(tilesPerRow + 1))) / Float(tilesPerRow)
-    }
-    
-    func tilePosition(x: Int, _ y: Int) -> CGPoint {
-        return CGPoint(
-            x: CGFloat(Float(_borderWidth) + (Float(x) * (tileSize + Float(_borderWidth))) + Float(tileSize / 2.0)),
-            y: CGFloat(Float(_borderWidth) + (Float(y) * (tileSize + Float(_borderWidth))) + Float(tileSize / 2.0))
-        )
     }
     
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TilePlaceholder: CCNode {
+public class TilePlaceholderView: View {
     
     // MARK: Instance Variables
     
@@ -19,13 +19,16 @@ class TilePlaceholder: CCNode {
     }()
     
     
-    init(size: Float) {
-        super.init()
+    init() {
+        super.init(gameObject: nil)
         
-        contentSize = CGSize(width: CGFloat(size), height: CGFloat(size))
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         addChild(_backgroundNode)
     }
-    
+
+    override public func viewDidResizeTo(newViewSize: CGSize) {
+        super.viewDidResizeTo(newViewSize)
+        _backgroundNode.contentSize = contentSize
+    }
     
 }

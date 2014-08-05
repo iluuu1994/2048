@@ -203,6 +203,10 @@
 		917FE62419818F6F00FE8E8F /* ChipmunkShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62319818F6F00FE8E8F /* ChipmunkShape.m */; };
 		917FE62619818F6F00FE8E8F /* ChipmunkSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62519818F6F00FE8E8F /* ChipmunkSpace.m */; };
 		917FE62819818F6F00FE8E8F /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */; };
+		9187D1D91990FCCE003FBD51 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1D81990FCCE003FBD51 /* GameObject.swift */; };
+		9187D1DC1990FDD9003FBD51 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1DB1990FDD9003FBD51 /* GameBoardView.swift */; };
+		9187D1DE1990FFB8003FBD51 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1DD1990FFB8003FBD51 /* TileView.swift */; };
+		9187D1E01991000C003FBD51 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1DF1991000C003FBD51 /* View.swift */; };
 		9187DD23198AEBE3006D2FF0 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD19198AEBE3006D2FF0 /* Button.swift */; };
 		9187DD24198AEBE3006D2FF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD1A198AEBE3006D2FF0 /* Constants.swift */; };
 		9187DD25198AEBE3006D2FF0 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */; };
@@ -212,7 +216,7 @@
 		9187DD29198AEBE3006D2FF0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD1F198AEBE3006D2FF0 /* Matrix.swift */; };
 		9187DD2A198AEBE3006D2FF0 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */; };
 		9187DD2B198AEBE3006D2FF0 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD21198AEBE3006D2FF0 /* Tile.swift */; };
-		9187DD2C198AEBE3006D2FF0 /* TilePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD22198AEBE3006D2FF0 /* TilePlaceholder.swift */; };
+		9187DD2C198AEBE3006D2FF0 /* TilePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD22198AEBE3006D2FF0 /* TilePlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -622,6 +626,10 @@
 		917FE62519818F6F00FE8E8F /* ChipmunkSpace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChipmunkSpace.m; path = Libraries/Chipmunk/objectivec/src/ChipmunkSpace.m; sourceTree = "<group>"; };
 		917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Chipmunk.txt; path = Libraries/LICENSE_Chipmunk.txt; sourceTree = "<group>"; };
 		917FE62A19818F6F00FE8E8F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = "Supporting Files/Prefix.pch"; sourceTree = "<group>"; };
+		9187D1D81990FCCE003FBD51 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		9187D1DB1990FDD9003FBD51 /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		9187D1DD1990FFB8003FBD51 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		9187D1DF1991000C003FBD51 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9187DD19198AEBE3006D2FF0 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Classes/Button.swift; sourceTree = "<group>"; };
 		9187DD1A198AEBE3006D2FF0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Classes/Constants.swift; sourceTree = "<group>"; };
 		9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard.swift; path = Classes/GameBoard.swift; sourceTree = "<group>"; };
@@ -631,7 +639,7 @@
 		9187DD1F198AEBE3006D2FF0 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = Classes/Matrix.swift; sourceTree = "<group>"; };
 		9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeDirection.swift; path = Classes/SwipeDirection.swift; sourceTree = "<group>"; };
 		9187DD21198AEBE3006D2FF0 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = Classes/Tile.swift; sourceTree = "<group>"; };
-		9187DD22198AEBE3006D2FF0 /* TilePlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TilePlaceholder.swift; path = Classes/TilePlaceholder.swift; sourceTree = "<group>"; };
+		9187DD22198AEBE3006D2FF0 /* TilePlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TilePlaceholderView.swift; path = Classes/TilePlaceholderView.swift; sourceTree = "<group>"; };
 		9187DD2D198AEC03006D2FF0 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2048-Bridging-Header.h"; path = "Supporting Files/2048-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1455,19 +1463,55 @@
 			isa = PBXGroup;
 			children = (
 				912DD150198BF42B00EDB1E4 /* AppDelegate.swift */,
-				9187DD19198AEBE3006D2FF0 /* Button.swift */,
 				9187DD1A198AEBE3006D2FF0 /* Constants.swift */,
-				9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */,
-				9187DD1C198AEBE3006D2FF0 /* GameOverScene.swift */,
-				9187DD1D198AEBE3006D2FF0 /* GameScene.swift */,
-				9187DD1E198AEBE3006D2FF0 /* Helpers.swift */,
-				9187DD1F198AEBE3006D2FF0 /* Matrix.swift */,
-				9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */,
-				9187DD21198AEBE3006D2FF0 /* Tile.swift */,
-				9187DD22198AEBE3006D2FF0 /* TilePlaceholder.swift */,
-				912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */,
+				9187D1DA1990FD1A003FBD51 /* Helpers */,
+				9187D1D51990FC9C003FBD51 /* Game Logic */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		9187D1D51990FC9C003FBD51 /* Game Logic */ = {
+			isa = PBXGroup;
+			children = (
+				9187D1D71990FCB4003FBD51 /* Models */,
+				9187D1D61990FCAE003FBD51 /* Views */,
+			);
+			name = "Game Logic";
+			sourceTree = "<group>";
+		};
+		9187D1D61990FCAE003FBD51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9187D1DF1991000C003FBD51 /* View.swift */,
+				9187D1DD1990FFB8003FBD51 /* TileView.swift */,
+				9187D1DB1990FDD9003FBD51 /* GameBoardView.swift */,
+				9187DD22198AEBE3006D2FF0 /* TilePlaceholderView.swift */,
+				9187DD19198AEBE3006D2FF0 /* Button.swift */,
+				9187DD1D198AEBE3006D2FF0 /* GameScene.swift */,
+				9187DD1C198AEBE3006D2FF0 /* GameOverScene.swift */,
+				912DD14C198BF2A600EDB1E4 /* YouWinScene.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9187D1D71990FCB4003FBD51 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9187D1D81990FCCE003FBD51 /* GameObject.swift */,
+				9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */,
+				9187DD21198AEBE3006D2FF0 /* Tile.swift */,
+				9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9187D1DA1990FD1A003FBD51 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9187DD1F198AEBE3006D2FF0 /* Matrix.swift */,
+				9187DD1E198AEBE3006D2FF0 /* Helpers.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1597,6 +1641,7 @@
 				917FE40F19818F6E00FE8E8F /* CCEffectColor.m in Sources */,
 				917FE40919818F6E00FE8E8F /* CCEffect.m in Sources */,
 				917FE5A719818F6F00FE8E8F /* CCBAnimationManager.m in Sources */,
+				9187D1E01991000C003FBD51 /* View.swift in Sources */,
 				917FE51519818F6F00FE8E8F /* CCVertex.m in Sources */,
 				917FE44919818F6E00FE8E8F /* CCAnimationCache.m in Sources */,
 				917FE50319818F6F00FE8E8F /* base64.c in Sources */,
@@ -1604,7 +1649,7 @@
 				917FE4F119818F6F00FE8E8F /* UITouch+CC.m in Sources */,
 				9187DD26198AEBE3006D2FF0 /* GameOverScene.swift in Sources */,
 				917FE58B19818F6F00FE8E8F /* CCButton.m in Sources */,
-				9187DD2C198AEBE3006D2FF0 /* TilePlaceholder.swift in Sources */,
+				9187DD2C198AEBE3006D2FF0 /* TilePlaceholderView.swift in Sources */,
 				917FE47D19818F6E00FE8E8F /* CCParallaxNode.m in Sources */,
 				917FE51019818F6F00FE8E8F /* ccUtils.c in Sources */,
 				917FE46D19818F6E00FE8E8F /* CCLayoutBox.m in Sources */,
@@ -1635,6 +1680,7 @@
 				917FE53D19818F6F00FE8E8F /* OALAudioTrack.m in Sources */,
 				917FE57E19818F6F00FE8E8F /* NSMutableDictionary+WeakReferences.m in Sources */,
 				917FE43C19818F6E00FE8E8F /* CCActionManager.m in Sources */,
+				9187D1D91990FCCE003FBD51 /* GameObject.swift in Sources */,
 				917FE49E19818F6E00FE8E8F /* CCProgressNode.m in Sources */,
 				917FE4AA19818F6E00FE8E8F /* CCResponderManager.m in Sources */,
 				917FE4DC19818F6E00FE8E8F /* CCTransition.m in Sources */,
@@ -1650,6 +1696,7 @@
 				917FE59E19818F6F00FE8E8F /* CCTextField.m in Sources */,
 				917FE47619818F6E00FE8E8F /* CCNode.m in Sources */,
 				917FE5B619818F6F00FE8E8F /* CCBLocalizationManager.m in Sources */,
+				9187D1DE1990FFB8003FBD51 /* TileView.swift in Sources */,
 				917FE49419818F6E00FE8E8F /* CCPhysicsJoint.m in Sources */,
 				917FE4C919818F6E00FE8E8F /* CCTextureCache.m in Sources */,
 				917FE40D19818F6E00FE8E8F /* CCEffectContrast.m in Sources */,
@@ -1693,6 +1740,7 @@
 				9187DD2A198AEBE3006D2FF0 /* SwipeDirection.swift in Sources */,
 				917FE43219818F6E00FE8E8F /* CCActionEase.m in Sources */,
 				917FE41319818F6E00FE8E8F /* CCEffectGlow.m in Sources */,
+				9187D1DC1990FDD9003FBD51 /* GameBoardView.swift in Sources */,
 				917FE55F19818F6F00FE8E8F /* ALSoundSourcePool.m in Sources */,
 				917FE5AA19818F6F00FE8E8F /* CCBKeyframe.m in Sources */,
 				912DD14D198BF2A600EDB1E4 /* YouWinScene.swift in Sources */,

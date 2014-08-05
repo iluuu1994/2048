@@ -13,26 +13,26 @@ class GameScene: CCScene {
     
     // MARK: Instanc Variables
     
-    private var _gameBoardMargin: Float = 20.0
+    private var _gameBoardMargin: CGFloat = 20.0
     
     lazy private var _backgroundNode: CCNodeColor = {
         CCNodeColor(color: CCColor(red: 0.98, green: 0.97, blue: 0.94))
     }()
     
     lazy private var _gameBoard: GameBoard = {
-        let gb = GameBoard(
-            contentSize: Float(self.contentSize.width) - (self._gameBoardMargin * 2),
-            tilesPerRow: 4
-        )
+        let gb = GameBoard(gridSize: 4)
+
+        let size = self.contentSize.width - self._gameBoardMargin*2
+        gb.view.contentSize = CGSize(width: size, height: size)
         
-        gb.positionType = CCPositionType(
+        gb.view.positionType = CCPositionType(
             xUnit: .Normalized,
             yUnit: .Normalized,
-            corner: gb.positionType.corner
+            corner: gb.view.positionType.corner
         )
         
-        gb.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        gb.position = CGPoint(x: 0.5, y: 0.5)
+        gb.view.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        gb.view.position = CGPoint(x: 0.5, y: 0.5)
         gb.delegate = self
         
         return gb
@@ -82,7 +82,7 @@ class GameScene: CCScene {
     
     func initSubnodes() {
         addChild(_backgroundNode)
-        addChild(_gameBoard)
+        addChild(_gameBoard.view)
         addChild(_scoreLabel)
         addChild(_restartButton)
     }

@@ -8,8 +8,9 @@
 
 import Foundation
 
+@UIApplicationMain
 @objc(AppDelegate)
-class AppDelegate: CCAppDelegate {
+class AppDelegate: CCAppDelegate, UIApplicationDelegate {
     
     override func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]!) -> Bool {
         setupCocos2dWithOptions([

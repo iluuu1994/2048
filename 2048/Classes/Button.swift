@@ -24,16 +24,16 @@ class Button: CCButton {
     
     // MARK: Init
     
-    init(title: String!) {
+    override init(title: String!) {
         super.init(title: title)
     }
     
-    init(title: String!, fontName: String!, fontSize size: Float) {
+    override init(title: String!, fontName: String!, fontSize size: Float) {
         super.init(title: title, fontName: fontName, fontSize: size)
         initDesign()
     }
     
-    init(title: String!, spriteFrame: CCSpriteFrame!, highlightedSpriteFrame highlighted: CCSpriteFrame!, disabledSpriteFrame disabled: CCSpriteFrame!) {
+    override init(title: String!, spriteFrame: CCSpriteFrame!, highlightedSpriteFrame highlighted: CCSpriteFrame!, disabledSpriteFrame disabled: CCSpriteFrame!) {
         super.init(title: title, spriteFrame: spriteFrame, highlightedSpriteFrame: highlighted, disabledSpriteFrame: disabled)
     }
     

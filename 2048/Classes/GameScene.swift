@@ -74,7 +74,7 @@ class GameScene: CCScene {
         return GameScene()
     }
     
-    init() {
+    override init() {
         super.init()
         
         initSubnodes()

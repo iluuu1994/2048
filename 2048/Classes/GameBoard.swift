@@ -8,8 +8,7 @@
 
 import Foundation
 
-@class_protocol
-protocol GameBoardDelegate {
+protocol GameBoardDelegate: class {
     func playerScoreIncreased(by: Int, totalScore: Int)
     func playerWonWithScore(score: Int)
     func gameOverWithScore(score: Int)
@@ -101,7 +100,7 @@ class GameBoard: CCNode {
         for x in 0..<_tiles.width {
             for y in 0..<_tiles.height {
                 if _tiles[x, y] == nil {
-                    emptyTiles += (x, y)
+                    emptyTiles += [(x, y)]
                 }
             }
         }
@@ -274,7 +273,7 @@ class GameBoard: CCNode {
             for (etX, etY) in [(at.x + 1, at.y), (at.x - 1, at.y), (at.x, at.y + 1), (at.x, at.y - 1)] {
                 if etX >= 0 && etX < _tiles.width && etY >= 0 && etY < _tiles.height {
                     if let enclosingTile = _tiles[etX, etY] {
-                        enclosingTiles += enclosingTile
+                        enclosingTiles += [enclosingTile]
                     }
                 }
             }

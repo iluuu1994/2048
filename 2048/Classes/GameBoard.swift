@@ -161,7 +161,6 @@ public class GameBoard: GameObject {
         }
         
         var validSwipe = false
-        var hasMerged = false
         
         for var firstV = firstI.initialValue; firstI.condition(firstV); firstV += firstI.incrementalValue {
             for var secondV = secondI.initialValue; secondI.condition(secondV); secondV += secondI.incrementalValue {
@@ -188,8 +187,6 @@ public class GameBoard: GameObject {
                         
                         if let fixedTile = _tiles[nnNewPos.x, nnNewPos.y] {
                             // Move the tile and merge it with the other tile
-                            hasMerged = true
-                            
                             removeTile(nnNewPos)
                             removeTile(tilePos)
                             
@@ -222,12 +219,6 @@ public class GameBoard: GameObject {
                 self.spawnRandomTile()
                 self.checkForGameOver()
             }, delay: kTileSpawnDelay)
-            
-            if !hasMerged {
-                OALSimpleAudio.sharedInstance().playEffect("Move.wav")
-            } else {
-                OALSimpleAudio.sharedInstance().playEffect("Merge.wav")
-            }
         }
         
         unlockAllTiles()

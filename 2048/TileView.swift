@@ -113,7 +113,7 @@ public class TileView: View {
     }()
     
     lazy var _label: CCLabelTTF = {
-        let l = CCLabelTTF(string: String(self.tile.value), fontName: "HelveticaNeue-Bold", fontSize: CGFloat(self._fontSize))
+        let l = CCLabelTTF(string: String(self.tile.value), fontName: "ClearSans-Bold", fontSize: CGFloat(self._fontSize))
         l.position = CGPoint(x: 0.5, y: 0.5)
         l.positionType = CCPositionType(
             xUnit: .Normalized,

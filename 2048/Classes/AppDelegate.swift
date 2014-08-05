@@ -13,10 +13,14 @@ import Foundation
 class AppDelegate: CCAppDelegate, UIApplicationDelegate {
     
     override func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]!) -> Bool {
+        // Configure cocos2d
         setupCocos2dWithOptions([
             CCSetupShowDebugStats: true,
             CCSetupScreenOrientation: CCScreenOrientationPortrait,
         ])
+        
+        // Register custom font
+        CCLabelTTF.registerCustomTTF("ClearSans-Bold.ttf")
         
         return true
     }

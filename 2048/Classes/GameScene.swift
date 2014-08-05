@@ -39,7 +39,7 @@ class GameScene: CCScene {
     }()
     
     lazy var _scoreLabel: CCLabelTTF = {
-        let l = CCLabelTTF(string: "Score: 0", fontName: "HelveticaNeue-Bold", fontSize: 40)
+        let l = CCLabelTTF(string: "Score: 0", fontName: "ClearSans-Bold", fontSize: 40)
         l.position = CGPoint(x: 0.5, y: 0.1)
         l.positionType = CCPositionType(
             xUnit: .Normalized,
@@ -52,7 +52,7 @@ class GameScene: CCScene {
     }()
     
     lazy var _restartButton: CCButton = {
-        let l = Button(title: "RESTART", fontName: "HelveticaNeue-Bold", fontSize: 28)
+        let l = Button(title: "RESTART", fontName: "ClearSans-Bold", fontSize: 28)
         
         l.position = CGPoint(x: 0.5, y: 0.1)
         l.positionType = CCPositionType(

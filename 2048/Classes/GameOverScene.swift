@@ -20,7 +20,7 @@ class GameOverScene: CCScene {
     }()
     
     lazy var _gameOverLabel: CCLabelTTF = {
-        let l = CCLabelTTF(string: "Game Over!", fontName: "HelveticaNeue-Bold", fontSize: 40)
+        let l = CCLabelTTF(string: "Game Over!", fontName: "ClearSans-Bold", fontSize: 40)
         l.position = CGPoint(x: 0.5, y: 0.55)
         l.positionType = CCPositionType(
             xUnit: .Normalized,
@@ -33,7 +33,7 @@ class GameOverScene: CCScene {
     }()
     
     lazy var _scoreLabel: CCLabelTTF = {
-        let l = CCLabelTTF(string: "Score: \(self._score)", fontName: "HelveticaNeue-Bold", fontSize: 28)
+        let l = CCLabelTTF(string: "Score: \(self._score)", fontName: "ClearSans-Bold", fontSize: 28)
         l.position = CGPoint(x: 0.5, y: 0.45)
         l.positionType = CCPositionType(
             xUnit: .Normalized,
@@ -46,7 +46,7 @@ class GameOverScene: CCScene {
     }()
     
     lazy var _tryAgainButton: CCButton = {
-        let l = Button(title: "TRY AGAIN", fontName: "HelveticaNeue-Bold", fontSize: 28)
+        let l = Button(title: "TRY AGAIN", fontName: "ClearSans-Bold", fontSize: 28)
 
         l.position = CGPoint(x: 0.5, y: 0.3)
         l.positionType = CCPositionType(

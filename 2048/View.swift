@@ -10,8 +10,7 @@ import Foundation
 
 public class View: CCNode {
     
-    // TODO: Make an unowned reference
-    var gameObject: GameObject!
+    weak var gameObject: GameObject!
     
     init(gameObject: GameObject?) {
         self.gameObject = gameObject

@@ -147,20 +147,20 @@ public class TileView: View {
     // MARK: Actions
     
     public func moveToAnimation(position: CGPoint) -> CCActionInterval {
-        return CCActionMoveTo(duration: kTileSwipeAnimationDuration, position: position)
+        return CCActionEaseInOut(action: CCActionMoveTo(duration: kTileSwipeAnimationDuration, position: position), rate: 2.0)
     }
     
     public func spawnAnimation() -> CCActionInterval {
         return CCActionSequence(
             one: CCActionCallBlock({ self.scale = kTileSpawnScaleFrom }),
-            two: CCActionScaleTo(duration: kTileSpawnScaleDuration, scale: kTileSpawnScaleTo)
+            two: CCActionEaseInOut(action: CCActionScaleTo(duration: kTileSpawnScaleDuration, scale: kTileSpawnScaleTo), rate: 2.0)
         )
     }
     
     public func mergeAnimation() -> CCActionInterval {
         return CCActionSequence(
-            one: CCActionScaleTo(duration: kTileMergeScaleDuration, scale: kTileMergeScaleTo),
-            two: CCActionScaleTo(duration: kTileMergeScaleDuration, scale: kTileMergeScaleFrom)
+            one: CCActionEaseInOut(action: CCActionScaleTo(duration: kTileMergeScaleDuration, scale: kTileMergeScaleTo), rate: 2.0),
+            two: CCActionEaseInOut(action: CCActionScaleTo(duration: kTileMergeScaleDuration, scale: kTileMergeScaleFrom), rate: 2.0)
         )
     }
 

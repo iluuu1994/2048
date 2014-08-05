@@ -203,8 +203,6 @@
 		917FE62419818F6F00FE8E8F /* ChipmunkShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62319818F6F00FE8E8F /* ChipmunkShape.m */; };
 		917FE62619818F6F00FE8E8F /* ChipmunkSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 917FE62519818F6F00FE8E8F /* ChipmunkSpace.m */; };
 		917FE62819818F6F00FE8E8F /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */; };
-		9187D1D91990FCCE003FBD51 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1D81990FCCE003FBD51 /* GameObject.swift */; };
-		9187D1DC1990FDD9003FBD51 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1DB1990FDD9003FBD51 /* GameBoardView.swift */; };
 		9187D1DE1990FFB8003FBD51 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1DD1990FFB8003FBD51 /* TileView.swift */; };
 		9187D1E01991000C003FBD51 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187D1DF1991000C003FBD51 /* View.swift */; };
 		9187DD23198AEBE3006D2FF0 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD19198AEBE3006D2FF0 /* Button.swift */; };
@@ -217,6 +215,8 @@
 		9187DD2A198AEBE3006D2FF0 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */; };
 		9187DD2B198AEBE3006D2FF0 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD21198AEBE3006D2FF0 /* Tile.swift */; };
 		9187DD2C198AEBE3006D2FF0 /* TilePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187DD22198AEBE3006D2FF0 /* TilePlaceholderView.swift */; };
+		91ADA5CB19918D84009626FB /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA5CA19918D84009626FB /* GameObject.swift */; };
+		91ADA5D019918D8D009626FB /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA5CE19918D8D009626FB /* GameBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -626,8 +626,6 @@
 		917FE62519818F6F00FE8E8F /* ChipmunkSpace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChipmunkSpace.m; path = Libraries/Chipmunk/objectivec/src/ChipmunkSpace.m; sourceTree = "<group>"; };
 		917FE62719818F6F00FE8E8F /* LICENSE_Chipmunk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Chipmunk.txt; path = Libraries/LICENSE_Chipmunk.txt; sourceTree = "<group>"; };
 		917FE62A19818F6F00FE8E8F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = "Supporting Files/Prefix.pch"; sourceTree = "<group>"; };
-		9187D1D81990FCCE003FBD51 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
-		9187D1DB1990FDD9003FBD51 /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		9187D1DD1990FFB8003FBD51 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		9187D1DF1991000C003FBD51 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9187DD19198AEBE3006D2FF0 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Classes/Button.swift; sourceTree = "<group>"; };
@@ -641,6 +639,8 @@
 		9187DD21198AEBE3006D2FF0 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = Classes/Tile.swift; sourceTree = "<group>"; };
 		9187DD22198AEBE3006D2FF0 /* TilePlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TilePlaceholderView.swift; path = Classes/TilePlaceholderView.swift; sourceTree = "<group>"; };
 		9187DD2D198AEC03006D2FF0 /* 2048-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "2048-Bridging-Header.h"; path = "Supporting Files/2048-Bridging-Header.h"; sourceTree = "<group>"; };
+		91ADA5CA19918D84009626FB /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = Classes/GameObject.swift; sourceTree = "<group>"; };
+		91ADA5CE19918D8D009626FB /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoardView.swift; path = Classes/GameBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1484,8 +1484,8 @@
 			children = (
 				9187D1DF1991000C003FBD51 /* View.swift */,
 				9187D1DD1990FFB8003FBD51 /* TileView.swift */,
-				9187D1DB1990FDD9003FBD51 /* GameBoardView.swift */,
 				9187DD22198AEBE3006D2FF0 /* TilePlaceholderView.swift */,
+				91ADA5CE19918D8D009626FB /* GameBoardView.swift */,
 				9187DD19198AEBE3006D2FF0 /* Button.swift */,
 				9187DD1D198AEBE3006D2FF0 /* GameScene.swift */,
 				9187DD1C198AEBE3006D2FF0 /* GameOverScene.swift */,
@@ -1497,7 +1497,7 @@
 		9187D1D71990FCB4003FBD51 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9187D1D81990FCCE003FBD51 /* GameObject.swift */,
+				91ADA5CA19918D84009626FB /* GameObject.swift */,
 				9187DD1B198AEBE3006D2FF0 /* GameBoard.swift */,
 				9187DD21198AEBE3006D2FF0 /* Tile.swift */,
 				9187DD20198AEBE3006D2FF0 /* SwipeDirection.swift */,
@@ -1680,7 +1680,6 @@
 				917FE53D19818F6F00FE8E8F /* OALAudioTrack.m in Sources */,
 				917FE57E19818F6F00FE8E8F /* NSMutableDictionary+WeakReferences.m in Sources */,
 				917FE43C19818F6E00FE8E8F /* CCActionManager.m in Sources */,
-				9187D1D91990FCCE003FBD51 /* GameObject.swift in Sources */,
 				917FE49E19818F6E00FE8E8F /* CCProgressNode.m in Sources */,
 				917FE4AA19818F6E00FE8E8F /* CCResponderManager.m in Sources */,
 				917FE4DC19818F6E00FE8E8F /* CCTransition.m in Sources */,
@@ -1710,6 +1709,7 @@
 				917FE4B819818F6E00FE8E8F /* CCSprite9Slice.m in Sources */,
 				917FE4F819818F6F00FE8E8F /* CCDirectorMac.m in Sources */,
 				917FE58E19818F6F00FE8E8F /* CCControl.m in Sources */,
+				91ADA5D019918D8D009626FB /* GameBoardView.swift in Sources */,
 				917FE48819818F6E00FE8E8F /* CCParticleSystem.m in Sources */,
 				917FE48419818F6E00FE8E8F /* CCParticleExamples.m in Sources */,
 				917FE45019818F6E00FE8E8F /* CCConfiguration.m in Sources */,
@@ -1740,7 +1740,6 @@
 				9187DD2A198AEBE3006D2FF0 /* SwipeDirection.swift in Sources */,
 				917FE43219818F6E00FE8E8F /* CCActionEase.m in Sources */,
 				917FE41319818F6E00FE8E8F /* CCEffectGlow.m in Sources */,
-				9187D1DC1990FDD9003FBD51 /* GameBoardView.swift in Sources */,
 				917FE55F19818F6F00FE8E8F /* ALSoundSourcePool.m in Sources */,
 				917FE5AA19818F6F00FE8E8F /* CCBKeyframe.m in Sources */,
 				912DD14D198BF2A600EDB1E4 /* YouWinScene.swift in Sources */,
@@ -1758,6 +1757,7 @@
 				917FE48119818F6E00FE8E8F /* CCParticleBatchNode.m in Sources */,
 				917FE51B19818F6F00FE8E8F /* NSAttributedString+CCAdditions.m in Sources */,
 				917FE41919818F6E00FE8E8F /* CCEffectStack.m in Sources */,
+				91ADA5CB19918D84009626FB /* GameObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -139,7 +139,6 @@ public class TileView: View {
     
     override public func viewDidResizeTo(newSize: CGSize) {
         _backgroundNode.contentSize = contentSize
-        println(newSize)
     }
     
 

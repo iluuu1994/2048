@@ -2,3 +2,5 @@
 ====
 
 A clone of 2048 written with Cocos2d in Swift
+
+![](./demo.png)
